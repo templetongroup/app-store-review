@@ -93,3 +93,31 @@ The record predicted guideline 1.2 (AI-generated content with no filter or
 report path) before both real rejections. Apple raised 2.1, then 5.0.0 + 5.2.5.
 1.2 has still never been raised. Do not pre-build a fix for a rejection that
 has not happened; do read the one you got, word by word.
+
+## 4. 2026-09-14 — Guidelines 5.1.1(i) and 5.1.2(i), consent before a third-party AI service
+
+**What Apple said:** "The app appears to share the user's personal data with a
+third-party AI service but the app does not clearly explain what data is sent,
+identify who the data is sent to, and ask the user's permission before sharing
+the data." And: "only including this information in the app's Terms of Service
+or Privacy Policy is not sufficient."
+
+**What it is:** correct. The app let a user paste an API key for a cloud
+provider and then sent the conversation there. The privacy policy said so; the
+app never did, and never asked.
+
+**What was done (a new build, unavoidably):** a consent sheet per provider —
+what is sent, where (provider named with its host, under its own policy, not
+to us), what is not sent, how to withdraw, a policy link, Allow / Not now —
+shown when a key is saved and before the first message to that provider;
+removing the key revokes. The privacy policy rewritten for the same four
+points with every provider's policy linked (each URL fetched, title checked)
+and a line saying we do not audit them. Review notes rewritten; the old body
+still said "nothing you type leaves the device", the same overclaim. The
+subtitle "fully offline" changed with the same submission for the same reason.
+
+**The lesson:** if the app can send anything to a third party — even
+optionally, even with the user's own key — the app itself must say what, to
+whom, and ask first, before the first byte. A policy page does not count.
+Write that sheet before the first submission; it is a day's work after a
+rejection and an hour before one.

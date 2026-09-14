@@ -136,6 +136,19 @@ next submission. Keep a list of "change on the next submission" items in your
 record — Radiant's is the subtitle — and put it in front of the user as part of
 the next build's checklist. Do not assume they remembered.
 
+## Uploading a build from the command line
+
+`xcodebuild -exportArchive -archivePath <.xcarchive> -exportOptionsPlist
+<plist with destination: upload> -allowProvisioningUpdates` uploads without
+Xcode's GUI — but it reads the Apple ID from **Xcode → Settings → Accounts**.
+"exportArchive Failed to Use Accounts" / "No Accounts" means nobody is signed
+in on this Mac; the log also says "No signing certificate iOS Distribution
+found", which is a red herring — once an account is signed in, cloud-managed
+signing supplies the certificate and no local Distribution identity is needed.
+Ask the user to sign in, rerun, look for "Upload succeeded" and
+"EXPORT SUCCEEDED". Processing on Apple's side takes several minutes before
+the build can be attached to a version.
+
 ## Driving App Store Connect with a browser
 
 - **Two kinds of fields refuse programmatic value-setting.** React-controlled
