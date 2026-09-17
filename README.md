@@ -8,10 +8,17 @@ without a new build, TestFlight versus App Store, age rating and privacy for
 apps that generate text or accept a user's own API key, and the App Store
 Connect UI traps that each cost a review cycle.
 
+It also covers what the first version of this skill did not, and should have:
+being approved is not the same as being a product. A rating prompt, keywords,
+promotional text and a cold first launch are all things that are painful or
+impossible to fix after you ship, and a checklist that only gets a binary past
+review will let you ship without them.
+
 Everything in it was learned shipping [Radiant](https://github.com/templetongroup/radiant)
 for iPhone: three rejections, one lost day, a 30-character subtitle that was
-both rejections at once, and a consent sheet that should have existed before
-the first submission. The `reference/` folder has the real rejections and a
+both rejections at once, a consent sheet that should have existed before the
+first submission, and a 1.0 that reached the store with no way to rate it —
+found by the owner a day after launch, not by the checklist. The `reference/` folder has the real rejections and a
 checklist.
 
 ## Install
